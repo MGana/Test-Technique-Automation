@@ -14,6 +14,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import junit.framework.Assert;
+import pages.HomePageObjects;
 
 public class AccesApropos {
 
@@ -46,7 +47,8 @@ public class AccesApropos {
 
 	@When("^J accede a la page a propos$")
 	public void j_acc_de_la_page_propos() throws Throwable {
-		driver.findElement(By.xpath("//a[@class='header__nav__link'][contains(text(),'À propos')]")).click();
+		HomePageObjects homePageObj = new HomePageObjects(driver);
+		homePageObj.clickAproposLink();
 	}
 
 	@Then("^Je suis capable de voir les trois chiffres clefs de happn$")

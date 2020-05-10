@@ -17,7 +17,7 @@ public class AccesCookies {
 
 	WebDriver driver;
 	CookiesPageObject CookiesPageObj = new CookiesPageObject(driver);	
-	
+
 	@When("^Je souhaite acceder a la page Charte d utilisation des cookies$")
 	public void je_souhaite_acceder_a_la_page_Charte_d_utilisation_des_cookies() throws Throwable {
 		driver.get("https://www.happn.com/fr/cookies/");
@@ -35,11 +35,8 @@ public class AccesCookies {
 	@Then("^Je suis capable de voir les differents headers de la charte$")
 	public void je_suis_capable_de_voir_les_differents_headers_de_la_charte() throws Throwable {
 		Assert.assertEquals(10,  CookiesPageObj.getHearder2().size());
-		
+
 		Assert.assertEquals(10,  CookiesPageObj.getHearder3().size());
 	}
-
-
-
 
 }

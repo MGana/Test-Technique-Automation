@@ -19,27 +19,27 @@ import pages.HomePageObjects;
 public class AccesApropos {
 
 	WebDriver driver;
-	
+
 	@Before
 	public void setup() {
 
 		String projectPath = System.getProperty("user.dir");
 		System.setProperty("webdriver.chrome.driver", projectPath+"\\drivers\\chromedriver_win32\\chromedriver.exe");
 		this.driver = new ChromeDriver();
-		
+
 		this.driver.manage().window().maximize();
 		this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		this.driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
 
 	}
-	
+
 	@After
 	public void tearDown()  {
 		this.driver.close();
 		this.driver.quit();
 		this.driver = null;
 	}
-	
+
 	@Given("^Visiteur du site internet$")
 	public void visiteur_du_site_internet() throws Throwable {
 		driver.get("https://www.happn.com/fr/");
@@ -57,6 +57,5 @@ public class AccesApropos {
 		int count = numbers.size();
 		Assert.assertEquals(3, count);
 	}
-
 
 }
